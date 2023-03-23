@@ -31,7 +31,7 @@ const ProductBreadcrumbs = () => {
   const { language } = useSelector((state) => state.language);
   const [parentCategory, setParentCategory] = React.useState({});
   const [category, setCategory] = React.useState();
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const { productIds } = useSelector((state) => state.comparePage);
 
@@ -102,7 +102,7 @@ const CategoryBreadcrumbs = () => {
   const { categories } = useSelector((state) => state.home);
   const { language } = useSelector((state) => state.language);
   const { productIds } = useSelector((state) => state.comparePage);
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const [actualParentCategory, setActualCategory] = React.useState(null);
   React.useEffect(() => {

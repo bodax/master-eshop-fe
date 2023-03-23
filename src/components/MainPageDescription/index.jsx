@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './InfoBlock.module.scss';
 
 const MainPageDescription = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   return (
     <div className={styles.infoContainer}>

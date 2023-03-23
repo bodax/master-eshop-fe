@@ -76,7 +76,7 @@ const CategoryPage = () => {
 
   const page = queryParameters.get('page');
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   // при першому рендері та оновленні мови
   React.useEffect(() => {

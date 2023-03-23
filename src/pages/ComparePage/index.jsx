@@ -30,7 +30,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const CompagePage = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   const [actualCategory, setActualcategory] = React.useState(null);
   const { language } = useSelector((state) => state.language);
   const {

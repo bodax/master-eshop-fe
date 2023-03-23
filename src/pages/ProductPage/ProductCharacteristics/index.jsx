@@ -18,7 +18,7 @@ const ProductCharacteristics = ({ description, characteristics }) => {
       description_ref.current.innerHTML = description;
     }
   }, [description]);
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   return (
     <ProductCharacteristicsMainContainer>

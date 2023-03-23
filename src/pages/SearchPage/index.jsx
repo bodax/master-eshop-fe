@@ -26,7 +26,7 @@ const SearchPage = () => {
 
   const [actualPage, setActualPage] = React.useState(page);
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   React.useEffect(() => {
     dispatch(

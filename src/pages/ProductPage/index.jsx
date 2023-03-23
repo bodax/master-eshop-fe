@@ -99,7 +99,7 @@ const ProductPage = () => {
     setImg(product_information.filename);
   }, [product_information?.filename]);
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const notify = (message) => {
     toast.success(message, {

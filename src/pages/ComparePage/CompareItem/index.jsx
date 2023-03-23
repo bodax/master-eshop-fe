@@ -27,7 +27,7 @@ const CompareItem = ({
   guarantee,
 }) => {
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   return (
     <CompareItemContainer>

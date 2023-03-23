@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../../../redux/Slicess/languageSlice';
 
 export function HamburgerMenu() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch();
 

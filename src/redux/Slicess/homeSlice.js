@@ -5,9 +5,9 @@ export const fetchHomeInformation = createAsyncThunk(
   'home/fetchHomeInformation',
   async (watchedProductsIds) => {
     const language = localStorage.getItem('i18nextLng');
-    const { data } = await axios.post(
-      `/api/page?lan=${language}`,
-      watchedProductsIds
+    const { data } = await axios.get(
+      `/api/page?lan=${language}`/*,
+      watchedProductsIds*/
     );
 
     return data;

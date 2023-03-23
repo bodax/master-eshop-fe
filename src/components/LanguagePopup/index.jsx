@@ -11,7 +11,7 @@ import {
 } from './LanguagePopupElements';
 
 const LanguagePopup = ({ languageStatus, setLanguageStatus }) => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   const dispatch = useDispatch();
 
   const changeLanguage = (lan) => {

@@ -14,7 +14,7 @@ import {
 
 const CategoriesPage = () => {
   const { categories } = useSelector((state) => state.home);
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const { language } = useSelector((state) => state.language);
 

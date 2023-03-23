@@ -30,7 +30,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   return (
     <>
       <FooterContainer>

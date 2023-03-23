@@ -47,7 +47,7 @@ const ProductsItem = ({ item }) => {
     dispatch(addProductToWatched(product_id));
   };
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const notify = (message) => {
     toast.success(message, {

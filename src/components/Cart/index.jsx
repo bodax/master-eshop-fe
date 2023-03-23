@@ -30,7 +30,7 @@ const Cart = ({ cartStatus, setCartStatus }) => {
   const { cartProducts, cartProductsIdsQty, totalPrice } = useSelector(
     (state) => state.cart
   );
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   const [oferStatus, setOferStatus] = React.useState(false);
 
   const dispatch = useDispatch();
