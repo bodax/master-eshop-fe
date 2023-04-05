@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axios from '../../axios';
 
 export const fetchCategoryProducts = createAsyncThunk(
@@ -13,8 +13,8 @@ export const fetchCategoryProducts = createAsyncThunk(
   }
 );
 
-export const fetchPropertyProducts = createAsyncThunk(
-  'category/fetchproPertyProducts',
+export const fetchCategoryProperties = createAsyncThunk(
+  'category/fetchCategoryProperties',
   async ({ url }) => {
     const language = localStorage.getItem('i18nextLng');
     const { data } = await axios.get(
@@ -43,13 +43,14 @@ export const fetchFiltredProducts = createAsyncThunk(
 
 const initialState = {
   products: [],
+  relatedProducts: [],
   numberOfPages: null,
   error: null,
   status: null,
   //------
   propertyProducts: [],
   values: [],
-  characteristics: {},
+  characteristics: [],
   manufacturers: [],
   propertyStatus: null,
   // filtration
@@ -112,20 +113,20 @@ export const categoryPageSlice = createSlice({
       state.status = 'error';
     },
     // get properties products
-    [fetchPropertyProducts.pending]: (state, action) => {
+    [fetchCategoryProperties.pending]: (state, action) => {
       state.error = null;
       state.propertyStatus = 'loading';
     },
-    [fetchPropertyProducts.fulfilled]: (state, action) => {
-      state.propertyProducts = action.payload.products;
-      state.values = action.payload.values;
-      state.characteristics = action.payload.characteristics;
-      state.manufacturers = action.payload.manufacturers;
-      state.meta = action.payload.meta[0];
+    [fetchCategoryProperties.fulfilled]: (state, action) => {
+      state.propertyProducts = action.payload.categoryInfo.relatedProducts;
+      state.values = action.payload.categoryInfo.values;
+      state.characteristics = action.payload.categoryInfo.characteristics;
+      //state.manufacturers = action.payload.categoryInfo.manufacturers;
+      //state.meta = action.payload.categoryInfo.meta[0];
 
       state.propertyStatus = 'success';
     },
-    [fetchPropertyProducts.rejected]: (state, action) => {
+    [fetchCategoryProperties.rejected]: (state, action) => {
       state.propertyStatus = 'error';
     },
     // get filtrated product

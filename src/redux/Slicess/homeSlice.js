@@ -40,6 +40,7 @@ export const fetchWatchedProducts = createAsyncThunk(
 
 const initialState = {
   //----------- Home page
+  productInfo: {},
   categories: [],
   actualCategory: [],
   actualSubcategories: [],
@@ -52,7 +53,7 @@ const initialState = {
   watchedProductsIds: [],
   watchedProductsStatus: null,
   //---------- AllProducts page
-  product_information: [],
+  product_information: {},
   photos: [],
   properties: [],
   characteristics: [],
@@ -135,20 +136,21 @@ export const homeSlice = createSlice({
     [fetchHomeInformation.rejected]: (state, action) => {
       state.status = 'error';
     },
-    // get and seporate product page information
+    // get and separate product page information
     [fetchProductPageInformation.pending]: (state, action) => {
       state.error = null;
       state.productStatus = 'loading';
     },
     [fetchProductPageInformation.fulfilled]: (state, action) => {
-      state.product_information = action.payload.product_information[0];
-      state.photos = action.payload.photos;
+      state.product_information = action.payload.productInfo.product_information;
+      state.photos = action.payload.productInfo.photos;
       state.properties = action.payload.properties;
       state.characteristics = action.payload.characteristics;
       state.description = action.payload.description[0];
       state.meta = action.payload.meta[0];
-
       state.productStatus = 'success';
+
+
     },
     [fetchProductPageInformation.rejected]: (state, action) => {
       state.productStatus = 'error';

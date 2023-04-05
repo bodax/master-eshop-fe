@@ -1,21 +1,23 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import {useTranslation} from 'react-i18next';
+import {useSelector} from 'react-redux';
 import {
-  CategoriesPageContainer,
-  CategoriesPageH1,
-  CategoriesPageImageContainer,
-  CategoriesPageItem,
-  CategoriesPageWrap,
-  CategoryItemImage,
-  CategoryItemLink,
-  CategoryPageBarrier,
+    CategoriesPageContainer,
+    CategoriesPageH1,
+    CategoriesPageImageContainer,
+    CategoriesPageItem,
+    CategoriesPageWrap,
+    CategoryItemImage,
+    CategoryItemLink,
+    CategoryPageBarrier,
 } from './CategoriesPageElements';
+import {Constants} from "../../utils/Constants";
+
 
 const CategoriesPage = () => {
   const { categories } = useSelector((state) => state.home);
-  const { t, i18n } = useTranslation('common');
-
+  const { t } = useTranslation('common');
+  const imagePath = Constants.imagePath;
   const { language } = useSelector((state) => state.language);
 
   return (
@@ -33,7 +35,7 @@ const CategoriesPage = () => {
               <CategoriesPageItem key={el.category_id} to={`/group_${el.url}`}>
                 <CategoriesPageImageContainer>
                   <CategoryItemImage
-                    src={`/static/category/${el.category_id}/${el.filename}`}
+                    src={`${imagePath}/category/${el.category_id}/${el.filename}`}
                   />
                 </CategoriesPageImageContainer>
                 <CategoryItemLink>{el.name}</CategoryItemLink>
