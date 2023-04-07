@@ -74,14 +74,14 @@ const ProductPage = () => {
     const {
         product_information,
         photos,
-        properties,
+        related_products,
         characteristics,
         productStatus,
         description,
         meta,
     } = useSelector((state) => state.home);
     const {language} = useSelector((state) => state.language);
-    console.log("ProductStatus:" + productStatus)
+
     const [img, setImg] = React.useState(null);
 
     React.useEffect(() => {
@@ -264,7 +264,7 @@ const ProductPage = () => {
                     />
                     <ProductSlider
                         title={t('sliders_titles.buy_also')}
-                        items={properties}
+                        items={related_products}
                         status={productStatus}
                     />
                 </>

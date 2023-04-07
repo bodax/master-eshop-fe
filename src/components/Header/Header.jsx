@@ -119,7 +119,7 @@ const Header = ({ setCartStatus, setLanguageStatus }) => {
           </HeaderRightLink>
         </HeaderRightLinks>
         <HeaderRightWrap>
-          <HeaderNumber>555 555 555</HeaderNumber>
+          <HeaderNumber>496 20 08</HeaderNumber>
           {/* <Link to='https://www.facebook.com/'>
             <FaFacebookSquare style={{ color: '#0058CF', fontSize: '20px' }} />
           </Link> */}

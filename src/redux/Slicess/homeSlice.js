@@ -55,9 +55,9 @@ const initialState = {
   //---------- AllProducts page
   product_information: {},
   photos: [],
-  properties: [],
+  related_products: [],
   characteristics: [],
-  description: [],
+  description: "",
   productStatus: null,
   meta: {},
 };
@@ -71,7 +71,7 @@ export const homeSlice = createSlice({
       state.photos = [];
       state.properties = [];
       state.characteristics = [];
-      state.description = [];
+      state.description = "";
       state.productStatus = null;
     },
 
@@ -144,10 +144,10 @@ export const homeSlice = createSlice({
     [fetchProductPageInformation.fulfilled]: (state, action) => {
       state.product_information = action.payload.productInfo.product_information;
       state.photos = action.payload.productInfo.photos;
-      state.properties = action.payload.properties;
-      state.characteristics = action.payload.characteristics;
-      state.description = action.payload.description[0];
-      state.meta = action.payload.meta[0];
+      state.related_products = action.payload.productInfo.related_products;
+      state.characteristics = action.payload.productInfo.characteristics;
+      state.description = action.payload.productInfo.description;
+      state.meta = action.payload.productInfo.meta;
       state.productStatus = 'success';
 
 

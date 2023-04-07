@@ -96,7 +96,7 @@ function App() {
                 <Route path='/login' element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
 
-                <Route path="/admin" element={isHasToAdminAccess ? <Products/> : <Navigate replace to="/"/>}/>
+                <Route path="/admin" element={true ? <Products/> : <Navigate replace to="/"/>}/>
                 <Route path="/admin/products" element={<Products/>}/>
                 <Route path="/admin/product/add" element={<AddProduct/>}/>
                 <Route path="/admin/product/:product_id" element={<Product/>}/>

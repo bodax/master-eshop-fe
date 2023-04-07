@@ -25,7 +25,7 @@ const Home = () => {
 
   const { language } = useSelector((state) => state.language);
 
-  const { t, i18n } = useTranslation('common');
+  const { t } = useTranslation('common');
 
   React.useEffect(() => {
     if (watchedProductsIds.length) {
